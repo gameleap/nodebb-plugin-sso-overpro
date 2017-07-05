@@ -30,8 +30,8 @@
 	var authenticationController = module.parent.require('./controllers/authentication');
 
 	var constants = Object.freeze({
-			type: '',	// Either 'oauth' or 'oauth2'
-			name: '',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
+			type: 'oauth2',	// Either 'oauth' or 'oauth2'
+			name: 'overpro',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
 			oauth: {
 				requestTokenURL: '',
 				accessTokenURL: '',
@@ -40,12 +40,12 @@
 				consumerSecret: ''
 			},
 			oauth2: {
-				authorizationURL: '',
-				tokenURL: '',
+				authorizationURL: 'https://www.overpro.net/dialog/authorize',
+				tokenURL: 'https://www.overpro.net/oauth/token',
 				clientID: '',
 				clientSecret: ''
 			},
-			userRoute: ''	// This is the address to your app's "user profile" API endpoint (expects JSON)
+			userRoute: 'https://www.overpro.net/api-v2/users.getCurrentUserOAuthData' // This is the address to your app's "user profile" API endpoint (expects JSON)
 		}),
 		configOk = false,
 		OAuth = {}, passportOAuth, opts;
@@ -152,7 +152,7 @@
 
 		var profile = {};
 		profile.id = data.id;
-		profile.displayName = data.name;
+		profile.displayName = data.username;
 		profile.emails = [{ value: data.email }];
 
 		// Do you want to automatically make somebody an admin? This line might help you do that...
@@ -244,6 +244,16 @@
 			callback(null, data);
 		});
 	};
+
+	 OAuth.init = function (data, callback) {
+        data.router.get('/login', function (req, res) {
+            res.redirect('/forum/auth/overpro');
+        });
+        data.router.get('/register', function (req, res) {
+            res.redirect('https://www.overpro.net/signup');
+        });
+        callback(null, data);
+    };
 
 	module.exports = OAuth;
 }(module));
