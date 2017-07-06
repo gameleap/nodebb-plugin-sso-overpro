@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-sso-overpro",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "NodeBB OverPro OAuth SSO",
   "main": "library.js",
   "repository": {
