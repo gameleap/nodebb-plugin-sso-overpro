@@ -1,11 +1,11 @@
 {
-  "name": "nodebb-plugin-sso-oauth",
+  "name": "nodebb-plugin-sso-overpro",
   "version": "0.3.2",
-  "description": "NodeBB Generic OAuth SSO",
+  "description": "NodeBB OverPro OAuth SSO",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/julianlam/nodebb-plugin-sso-oauth"
+    "url": "https://github.com/ivanvgdev/nodebb-plugin-sso-overpro"
   },
   "keywords": [
     "nodebb",
@@ -15,15 +15,12 @@
     "sso",
     "single sign on",
     "login",
-    "registration"
+    "registration",
+    "overpro"
   ],
-  "author": {
-    "name": "Julian Lam",
-    "email": "julian@nodebb.org"
-  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/julianlam/nodebb-plugin-sso-oauth/issues"
+    "url": "https://github.com/ivanvgdev/nodebb-plugin-sso-overpro/issues"
   },
   "readme": "",
   "readmeFilename": "README.md",
@@ -31,7 +28,7 @@
     "passport-oauth": "~1.0.0"
   },
   "nbbpm": {
-    "compatibility": "^1.0.1",
-    "index": false
+    "compatibility": "^1.5.1",
+    "index": true
   }
 }

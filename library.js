@@ -42,10 +42,10 @@
 			oauth2: {
 				authorizationURL: 'https://www.overpro.net/dialog/authorize',
 				tokenURL: 'https://www.overpro.net/oauth/token',
-				clientID: '',
-				clientSecret: ''
+				clientID: 'R3kRbmCep61muK9MDrktE9780coI1h',
+				clientSecret: 'HcXGYb49qZI5QFXDElbpSLzMo0uWVY'
 			},
-			userRoute: 'https://www.overpro.net/api-v2/users.getCurrentUserOAuthData' // This is the address to your app's "user profile" API endpoint (expects JSON)
+			userRoute: 'https://www.overpro.net/api/v1/users.getCurrentUserOAuthData' // This is the address to your app's "user profile" API endpoint (expects JSON)
 		}),
 		configOk = false,
 		OAuth = {}, passportOAuth, opts;
